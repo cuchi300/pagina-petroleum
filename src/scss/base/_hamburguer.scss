@@ -1,0 +1,69 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.hamburger{
+	// position:fixed;
+    // background-color:transparent;
+	// left:0;
+	// top:0;
+	// height:30px;
+	// width:30px;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	z-index:1002;
+	cursor:pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none
+}
+@include m.tablet {
+    .hamburger{
+        display: none;
+    }
+}
+.hamburger.is-active{
+    background-color:none;
+}
+.layer{
+	background-color: v.$blanco;
+	margin-bottom:4px;
+	border-radius:2px;
+	width:29px;
+	height:4px;
+	opacity:1;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+.layer.negro{
+	background-color: v.$negro;
+}
+.hamburger:hover .top{
+	-webkit-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	transform:translateY(-100%);
+}
+.hamburger:hover .bottom{
+	-webkit-transform:translateY(50%);
+	-ms-transform:translateY(100%);
+	transform:translateY(100%);
+	}
+.hamburger.is-active .top{
+	-webkit-transform:translateY(200%) rotate(45deg);
+	-ms-transform:translateY(200%) rotate(45deg);
+	transform:translateY(200%) rotate(45deg);
+    background-color: v.$negro;
+}
+.hamburger.is-active .mid{
+	opacity:0;
+}
+.hamburger.is-active .bottom{
+	-webkit-transform:translateY(-200%) rotate(135deg);
+	-ms-transform:translateY(-200%) rotate(135deg);
+	transform:translateY(-200%) rotate(135deg);
+    background-color: v.$negro;
+}

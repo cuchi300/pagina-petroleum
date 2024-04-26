@@ -1,0 +1,14 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.hero{
+    padding: 15rem 0;
+    color: v.$heading;
+    text-align: center;
+    text-transform: uppercase;
+
+    &__parrafo{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}

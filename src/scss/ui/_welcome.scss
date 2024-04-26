@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.welcome{
+
+    &__grid{
+        @include m.desktop {
+            @include m.grid(2,5rem);
+            grid-template-columns: 40% 55%;
+        }
+    }
+    &__contenido{
+        margin-top: 5rem;
+    }
+    &__titulo{
+        font-size: 3rem;
+    }
+}

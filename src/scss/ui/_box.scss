@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.box{
+    margin-bottom: 3rem;
+    @include m.tablet {
+        margin-bottom: 0;
+    }
+    &__contenido{
+        text-align: center;
+    }
+    &__enlace{
+        padding: .5rem 0;
+        margin-top: 2rem;
+        background-color: v.$primario;
+        border-radius: .5rem;
+    }
+}

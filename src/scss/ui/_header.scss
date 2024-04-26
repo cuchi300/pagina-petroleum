@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.header{
+    @include m.bgImagen('../img/hero-main.jpg');
+    color: v.$blanco;
+
+    // top header
+    &__top{
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6rem;
+
+        display: flex;
+        flex-direction: column;
+        
+        padding: 1rem 2rem;
+
+        transition: background-color .3s;
+
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__logo{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__enlace{
+        display: flex;
+        gap: 2rem;
+
+        align-items: center;
+    }
+    &__imagen{
+        width: 4rem;
+    }
+    &__texto-logo{
+        font-size: 2.1rem;
+        font-weight: 300;
+        font-family: v.$fuenteSecundaria;
+
+        display: none;
+        @include m.tablet {
+            display: block;
+        }
+        span{
+            text-transform: uppercase;    
+        }
+    }
+}
+
+// efectos javascript 
+.bg-blanco{
+    background-color: v.$blanco;
+
+    -webkit-box-shadow: 0px 1px 3px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 1px 3px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 1px 3px -1px rgba(0,0,0,0.75);
+}
+.text-black{
+    color: v.$negro;
+}

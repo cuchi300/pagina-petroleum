@@ -1,0 +1,13 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.footer{
+    background-color: v.$primario;
+    padding: 2rem 0;
+    &__copy{
+        font-family: v.$fuenteSecundaria;
+        color: v.$blanco;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+}

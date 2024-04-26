@@ -1,0 +1,15 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.main{
+    padding-block: 8rem;
+    @include m.tablet {
+        padding-inline: 2rem
+    }
+    &__grid{
+
+        @include m.tablet {
+            @include m.grid(3,3rem);
+        }
+    }
+}
